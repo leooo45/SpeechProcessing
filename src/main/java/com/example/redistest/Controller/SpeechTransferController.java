@@ -26,7 +26,7 @@ public class SpeechTransferController {
 ////        String type = message.split(",")[2];
         TaskBean taskBean = new TaskBean();
         taskBean.setFilePath(filepath);
-        taskBean.setType("video");
+        taskBean.setType(type);
         taskBean.setResourceId(id);
         kdsfService.addTask(taskBean);
         return "-----"+filepath+"---------"+id+" "+type;

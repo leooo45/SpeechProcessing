@@ -154,8 +154,50 @@ public class KDXFServiceImpl implements IKDXFService {
 
 
     }
+//查询单个任务的状态
+    public void checkTaskStatus(TaskBean taskBean){
+        try{
+            KdxfWebUtil kdxfWebUtil = new KdxfWebUtil();
+            String taskid=taskBean.getTaskId();
+            ApiResultDto taskProgress = kdxfWebUtil.getProgress("e369cd2bfc3b4ef09ff2e210f6ab5169");
+            if (taskProgress.getOk() == 0) {
+                if (taskProgress.getErr_no() != 0) {
+                    System.out.println("任务失败：" + JSON.toJSONString(taskProgress));
+                }
+                String taskStatus = taskProgress.getData();
+                if (JSON.parseObject(taskStatus).getInteger("status") == 9) {
+                    System.out.println("任务完成！");
+                    System.out.println("\r\n\r\n转写结果: " +kdxfWebUtil.getResult(taskid));
+                    try{
+                        //写入文件
+                        String jsonSavePath="/Users/shaominchen/Desktop/libei/libei_test.json";
+                        SaveFileUtil.saveDataToFile(jsonSavePath,kdxfWebUtil.getResult(taskid));
+                    }catch (Exception e){
+                        e.printStackTrace();
+//                    amqpTemplate.convertAndSend(mFilePath + "," + "转换出错");
+                        return;
+                    }
+//                amqpTemplate.convertAndSend(mFilePath + "," + "转换成功");
+                             /*若有任务完成
+                             则给文科平台API发消息（文件转换状态更新）
+                             队列（task-processing）删掉已完成任务
+                             队列（task-standby） 拿新的任务*/
+//                            taskComplete();
+                    System.out.println("调试-任务处理成功");
+                    return;
+                }
+                System.out.println("任务处理中：" + taskStatus);
+            } else {
+                System.out.println("获取任务进度失败！");
 
+            }
+            // 获取结果
+        } catch (SignatureException e) {
+            e.printStackTrace();
+//            amqpTemplate.convertAndSend(mFilePath + "," + "请求失败");
+        }
 
+    }
 
 
 

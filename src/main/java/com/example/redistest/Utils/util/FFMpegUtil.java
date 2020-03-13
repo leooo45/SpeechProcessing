@@ -19,7 +19,7 @@ public class FFMpegUtil {
 //    ffmpeg -i apple.mp4 -f mp3 -vn apple.mp3
     public void extractAudioFromVideo(String videoInputPath, String audioOutPutPath)throws Exception {
        File f=new File(videoInputPath);
-       if(f==null){
+       if(!f.exists()){
            System.out.println("输入文件不存在");
        }
         List<String> command = new ArrayList<>();

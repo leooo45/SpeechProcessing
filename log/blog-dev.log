@@ -2046,3 +2046,162 @@ Caused by: io.lettuce.core.RedisCommandExecutionException: NOAUTH Authentication
 2020-03-13 22:24:10.385  INFO 52968 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 1.68 seconds (JVM running for 2.214)
 2020-03-13 22:28:22.962  INFO 52968 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
 2020-03-13 22:28:22.964  INFO 52968 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:46:58.634  INFO 58047 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 58047 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 22:46:58.635  INFO 58047 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 22:46:58.676  INFO 58047 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 22:46:58.676  INFO 58047 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 22:46:58.677  INFO 58047 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 22:46:59.193  INFO 58047 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 22:46:59.201  INFO 58047 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 22:46:59.227  INFO 58047 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2020-03-13 22:46:59.662  INFO 58047 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 22:46:59.670  INFO 58047 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 22:46:59.671  INFO 58047 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 22:46:59.741  INFO 58047 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 22:46:59.742  INFO 58047 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1065 ms
+2020-03-13 22:47:00.306  INFO 58047 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:47:00.484  INFO 58047 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 22:47:00.505  INFO 58047 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 22:47:00.577  INFO 58047 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 22:47:00.581  INFO 58047 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.244 seconds (JVM running for 2.959)
+2020-03-13 22:47:08.277  INFO 58047 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 22:47:08.277  INFO 58047 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 22:47:08.283  INFO 58047 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-13 22:47:39.815  INFO 58047 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 22:47:39.816  INFO 58047 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:47:42.636  INFO 58193 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 58193 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 22:47:42.638  INFO 58193 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 22:47:42.675  INFO 58193 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 22:47:42.676  INFO 58193 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 22:47:42.676  INFO 58193 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 22:47:43.048  INFO 58193 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 22:47:43.049  INFO 58193 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 22:47:43.064  INFO 58193 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2020-03-13 22:47:43.396  INFO 58193 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 22:47:43.402  INFO 58193 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 22:47:43.403  INFO 58193 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 22:47:43.455  INFO 58193 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 22:47:43.455  INFO 58193 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 779 ms
+2020-03-13 22:47:43.821  INFO 58193 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 22:47:43.957  INFO 58193 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 22:47:43.976  INFO 58193 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 22:47:44.047  INFO 58193 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 22:47:44.051  INFO 58193 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 1.687 seconds (JVM running for 2.254)
+2020-03-13 22:47:56.478  INFO 58193 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 22:47:56.479  INFO 58193 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 22:47:56.483  INFO 58193 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-03-13 23:06:30.110  INFO 58193 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 23:06:30.111  INFO 58193 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:06:33.405  INFO 61706 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 61706 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 23:06:33.407  INFO 61706 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 23:06:33.443  INFO 61706 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 23:06:33.443  INFO 61706 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 23:06:33.444  INFO 61706 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 23:06:33.882  INFO 61706 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 23:06:33.885  INFO 61706 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 23:06:33.908  INFO 61706 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-03-13 23:06:34.298  INFO 61706 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 23:06:34.306  INFO 61706 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 23:06:34.306  INFO 61706 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 23:06:34.379  INFO 61706 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 23:06:34.380  INFO 61706 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 936 ms
+2020-03-13 23:06:34.928  INFO 61706 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:06:35.104  INFO 61706 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 23:06:35.125  INFO 61706 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 23:06:35.196  INFO 61706 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 23:06:35.200  INFO 61706 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.073 seconds (JVM running for 2.787)
+2020-03-13 23:06:56.134  INFO 61706 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 23:06:56.134  INFO 61706 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 23:06:56.140  INFO 61706 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-13 23:10:04.948  INFO 61706 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 23:10:04.949  INFO 61706 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:10:09.624  INFO 62499 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 62499 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 23:10:09.626  INFO 62499 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 23:10:09.660  INFO 62499 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 23:10:09.660  INFO 62499 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 23:10:09.660  INFO 62499 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 23:10:10.114  INFO 62499 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 23:10:10.117  INFO 62499 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 23:10:10.142  INFO 62499 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-03-13 23:10:10.535  INFO 62499 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 23:10:10.543  INFO 62499 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 23:10:10.543  INFO 62499 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 23:10:10.616  INFO 62499 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 23:10:10.617  INFO 62499 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 957 ms
+2020-03-13 23:10:11.143  INFO 62499 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:10:11.316  INFO 62499 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 23:10:11.336  INFO 62499 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 23:10:11.407  INFO 62499 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 23:10:11.411  INFO 62499 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.064 seconds (JVM running for 2.801)
+2020-03-13 23:10:14.298  INFO 62499 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 23:10:14.299  INFO 62499 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 23:10:14.305  INFO 62499 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-13 23:31:40.833  INFO 62499 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 23:31:40.834  INFO 62499 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:31:46.194  INFO 66636 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 66636 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 23:31:46.196  INFO 66636 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 23:31:46.233  INFO 66636 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 23:31:46.233  INFO 66636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 23:31:46.233  INFO 66636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 23:31:46.702  INFO 66636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 23:31:46.704  INFO 66636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 23:31:46.726  INFO 66636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-03-13 23:31:47.114  INFO 66636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 23:31:47.122  INFO 66636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 23:31:47.122  INFO 66636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 23:31:47.200  INFO 66636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 23:31:47.201  INFO 66636 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 967 ms
+2020-03-13 23:31:47.756  INFO 66636 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:31:47.928  INFO 66636 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 23:31:47.949  INFO 66636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 23:31:48.022  INFO 66636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 23:31:48.026  INFO 66636 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.143 seconds (JVM running for 2.908)
+2020-03-13 23:32:01.352  INFO 66636 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 23:32:01.353  INFO 66636 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 23:32:01.359  INFO 66636 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-13 23:32:23.312  INFO 66636 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 23:32:23.313  INFO 66636 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:32:26.621  INFO 66768 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 66768 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 23:32:26.622  INFO 66768 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 23:32:26.657  INFO 66768 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 23:32:26.657  INFO 66768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 23:32:26.658  INFO 66768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 23:32:27.109  INFO 66768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 23:32:27.112  INFO 66768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 23:32:27.141  INFO 66768 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-03-13 23:32:27.551  INFO 66768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 23:32:27.565  INFO 66768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 23:32:27.565  INFO 66768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 23:32:27.630  INFO 66768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 23:32:27.630  INFO 66768 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 972 ms
+2020-03-13 23:32:28.173  INFO 66768 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:32:28.354  INFO 66768 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 23:32:28.374  INFO 66768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 23:32:28.445  INFO 66768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 23:32:28.449  INFO 66768 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.09 seconds (JVM running for 2.664)
+2020-03-13 23:32:45.145  INFO 66768 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 23:32:45.146  INFO 66768 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 23:32:45.152  INFO 66768 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-03-13 23:38:13.366  INFO 66768 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-03-13 23:38:13.368  INFO 66768 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:38:18.026  INFO 67868 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Starting KdxfdemoApplication on shaomindeMacBook-Pro.local with PID 67868 (/Users/shaominchen/Documents/code/kdxf-ssf/target/classes started by shaominchen in /Users/shaominchen/Documents/code/kdxf-ssf)
+2020-03-13 23:38:18.028  INFO 67868 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : The following profiles are active: dev
+2020-03-13 23:38:18.064  INFO 67868 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/usr/local/maven/maven-3.6.3.2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 23:38:18.065  INFO 67868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 23:38:18.065  INFO 67868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 23:38:18.526  INFO 67868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 23:38:18.528  INFO 67868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-03-13 23:38:18.549  INFO 67868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-03-13 23:38:18.943  INFO 67868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2020-03-13 23:38:18.950  INFO 67868 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 23:38:18.951  INFO 67868 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-13 23:38:19.031  INFO 67868 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 23:38:19.031  INFO 67868 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 966 ms
+2020-03-13 23:38:19.616  INFO 67868 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 23:38:19.808  INFO 67868 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-13 23:38:19.828  INFO 67868 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 23:38:19.900  INFO 67868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2020-03-13 23:38:19.904  INFO 67868 --- [restartedMain] c.example.redistest.KdxfdemoApplication  : Started KdxfdemoApplication in 2.159 seconds (JVM running for 2.978)
+2020-03-13 23:38:28.454  INFO 67868 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 23:38:28.455  INFO 67868 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 23:38:28.460  INFO 67868 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms

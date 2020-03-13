@@ -25,22 +25,16 @@ public class KdxfWebUtil {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-//    @Value("${lfasr_host}")
+
     public static String LFASR_HOST="http://raasr.xfyun.cn/api" ;
-
     private String APPID = "5e4cb2a5";
-
     @Autowired
     private RedisTemplate redisTemplate;
-
     public String SECRET_KEY = "fb3e810f1cbfb391594241d6ddfd1c6e";
-
-
     public static final int SLICE_SICE=10485760 ;
 
 //    @Value("${ffmpeg.filepath}")
     public String FFMPEGEXE="/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg";
-
     public static final String PREPARE = "/prepare";
     public static final String UPLOAD = "/upload";
     public static final String MERGE = "/merge";
