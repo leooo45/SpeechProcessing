@@ -25,8 +25,8 @@ public class KdxfWebUtil {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    @Value("${lfasr_host}")
-    public static String LFASR_HOST ;
+//    @Value("${lfasr_host}")
+    public static String LFASR_HOST="http://raasr.xfyun.cn/api" ;
 
     private String APPID = "5e4cb2a5";
 
@@ -38,8 +38,8 @@ public class KdxfWebUtil {
 
     public static final int SLICE_SICE=10485760 ;
 
-    @Value("${ffmpeg.filepath}")
-    public String FFMPEGEXE;
+//    @Value("${ffmpeg.filepath}")
+    public String FFMPEGEXE="/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg";
 
     public static final String PREPARE = "/prepare";
     public static final String UPLOAD = "/upload";
@@ -67,21 +67,25 @@ public class KdxfWebUtil {
             return;
         }
         //视频抽取音频
-        if(taskBean.getType().equals("audio")){
+        if(taskBean.getType().equals("video")){
             String filepath=taskBean.getFilePath();
             //生成视频目录下同名音频文件地址
             String outputFilePath=filepath.substring(0,filepath.lastIndexOf("."))+".mp3";
+            System.out.println("调试-生成分离的音频地址为"+outputFilePath);
             //初始化ffmpeg
             FFMpegUtil ffmpeg = new FFMpegUtil(FFMPEGEXE);
             try{
                 ffmpeg.extractAudioFromVideo(filepath,outputFilePath);
                 System.out.println("调试-视频分离的音频路径为"+outputFilePath);
             }catch (Exception e){
+                System.out.println("调试-视频分离过程出错了");
                 // 发送视频音频分离错误MQ 打印错误不再继续
                 e.printStackTrace();
 //                amqpTemplate.convertAndSend(taskBean.getFilePath() + "," + "转换出错");
                 return;
             }
+            System.out.println("调试-音频处理结束进入音频切割");
+
             transferFilePath=outputFilePath;
             /**
              * 这里是否在转换结束再次判断文件是否存在，如果不存在采取措施？？？
@@ -95,7 +99,7 @@ public class KdxfWebUtil {
             String taskId = prepare(audio);
             //taskid赋值给taskbean
             taskBean.setTaskId(taskId);
-            redisTemplate.opsForValue().set(taskBean.getResourceId(),taskBean);
+//            redisTemplate.opsForValue().set(taskBean.getResourceId(),taskBean);
             // 分片上传文件
             int len = 0;
             byte[] slice = new byte[SLICE_SICE];
@@ -109,6 +113,7 @@ public class KdxfWebUtil {
                 }
                 // 合并文件
             merge(taskId);
+            System.out.println("taskid is ---"+taskId);
             } catch (SignatureException e) {
                 e.printStackTrace();
 //            amqpTemplate.convertAndSend(taskBean.getResourceId()+ "," + "转换出错");

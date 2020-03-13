@@ -1,6 +1,7 @@
 package com.example.redistest.Utils.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -17,6 +18,10 @@ public class FFMpegUtil {
 //    抽取音频转mp3
 //    ffmpeg -i apple.mp4 -f mp3 -vn apple.mp3
     public void extractAudioFromVideo(String videoInputPath, String audioOutPutPath)throws Exception {
+       File f=new File(videoInputPath);
+       if(f==null){
+           System.out.println("输入文件不存在");
+       }
         List<String> command = new ArrayList<>();
         command.add(ffmpegEXE);
         command.add("-i");
@@ -34,6 +39,7 @@ public class FFMpegUtil {
             e.printStackTrace();
             throw new Exception("抽取音频文件失败");
         }
+        System.out.println("音频分离结束");
     }
     //执行命令
     public void executiveOrder(List<String> command) throws Exception {
@@ -47,7 +53,7 @@ public class FFMpegUtil {
 
         String line = "";
         while ( (line = br.readLine()) != null ) {
-System.out.println(line);
+        System.out.println(line);
         }
 
         if (br != null) {
@@ -88,4 +94,15 @@ System.out.println(line);
         }
 
     }
+    public static void main(String[] args){
+        FFMpegUtil ffMpegUtil=new FFMpegUtil("/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg");
+        try {
+            ffMpegUtil.extractAudioFromVideo("/Users/shaominchen/Desktop/libei/libei_test.mp4","/Users/shaominchen/Desktop/libei/libei_test.mp3");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("单例测试，结束音频测试");
+
+    }
+
 }

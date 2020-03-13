@@ -8,7 +8,7 @@ logging:
         com.likego.blog: debug
     file: log/blog-dev.log
 server:
-    port: 8080
+    port: 8083
 kdxfConfig:
     appid: "11223344"
     secretid: "11223344"
