@@ -32,6 +32,23 @@ public class KDXFServiceImpl implements IKDXFService {
     private AmqpTemplate amqpTemplate;
 
     @Override
+    public void addTaskTest(TaskBean taskBean){
+        Queue waitingQueue = (ArrayBlockingQueue)redisTemplate.opsForValue().get("waitingQueue");
+        waitingQueue.add(taskBean);
+       redisTemplate.opsForValue().set("waitingQueue",waitingQueue);
+        Set<String> keys = redisTemplate.keys("*");
+        for(String key:keys){
+            //key为Redis中得到的所有的任务的资源id
+            if(key.equals("waitingQueue")){
+                System.out.println("0000");
+            }
+        }
+
+
+    }
+
+
+    @Override
     public void addTask(TaskBean taskBean) {
 //       Queue waitingQueue = (ArrayBlockingQueue)redisTemplate.opsForValue().get("waitingQueue");
 //    //加入任务队列
@@ -52,7 +69,7 @@ public class KDXFServiceImpl implements IKDXFService {
 //            waitingQueue.add(taskBean);
 //            redisTemplate.opsForValue().set(waitingQueue,waitingQueue);
 //        }
-        startOneTask(taskBean);
+//        startOneTask(taskBean);
     }
 
     //获取转换结果，10秒一次查询转换

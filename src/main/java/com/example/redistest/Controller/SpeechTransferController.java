@@ -28,7 +28,7 @@ public class SpeechTransferController {
         taskBean.setFilePath(filepath);
         taskBean.setType(type);
         taskBean.setResourceId(id);
-        kdsfService.addTask(taskBean);
+        kdsfService.addTaskTest(taskBean);
         return "-----"+filepath+"---------"+id+" "+type;
     }
 }

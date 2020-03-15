@@ -38,4 +38,5 @@ public interface IKDXFService {
      */
     void taskComplete(TaskBean taskBean);
 
+    void addTaskTest(TaskBean taskBean);
 }
