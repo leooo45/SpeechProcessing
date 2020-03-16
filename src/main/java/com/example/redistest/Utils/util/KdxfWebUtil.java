@@ -4,12 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.example.redistest.Bean.TaskBean;
 import com.example.redistest.Utils.dto.ApiResultDto;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,21 +17,24 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class KdxfWebUtil {
 
-    @Autowired
+    public KdxfWebUtil(AmqpTemplate amqpTemplate,RedisTemplate redisTemplate){
+        this.amqpTemplate = amqpTemplate;
+        this.redisTemplate = redisTemplate;
+    }
     private AmqpTemplate amqpTemplate;
 
+    private RedisTemplate redisTemplate;
 
     public static String LFASR_HOST="http://raasr.xfyun.cn/api" ;
     private String APPID = "5e4cb2a5";
-    @Autowired
-    private RedisTemplate redisTemplate;
     public String SECRET_KEY = "fb3e810f1cbfb391594241d6ddfd1c6e";
     public static final int SLICE_SICE=10485760 ;
 
 //    @Value("${ffmpeg.filepath}")
-    public String FFMPEGEXE="/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg";
+    public String FFMPEGEXE="D:\\ffmpeg-20200309-608b8a8-win64-static\\bin\\ffmpeg";
     public static final String PREPARE = "/prepare";
     public static final String UPLOAD = "/upload";
     public static final String MERGE = "/merge";
@@ -47,7 +47,6 @@ public class KdxfWebUtil {
      * 处理单个任务,完成文件的视频音频分离、切片上传、重组一系列操作
      * @param taskBean
      */
-    @Async
     public void startTask(TaskBean taskBean){
         //转换文件的地址
         String transferFilePath="";
@@ -56,12 +55,12 @@ public class KdxfWebUtil {
             System.out.println("调试-当前处理的信息不完整，发送mq，程序返回不再执行"+taskBean.toString());
             return;
         }
-        if (!taskBean.getType().equals("video") && !taskBean.getType().equals("audio")){
+        if (!taskBean.getType().equals("视频") && !taskBean.getType().equals("音频")){
             System.out.println("调试-当前处理的文件类型错误，发送mq，程序返回不再执行"+taskBean.toString());
             return;
         }
         //视频抽取音频
-        if(taskBean.getType().equals("video")){
+        if(taskBean.getType().equals("视频")){
             String filepath=taskBean.getFilePath();
             //生成视频目录下同名音频文件地址
             String outputFilePath=filepath.substring(0,filepath.lastIndexOf("."))+".mp3";
@@ -87,13 +86,14 @@ public class KdxfWebUtil {
             }else {
                 transferFilePath=taskBean.getFilePath();
             }
+
         File audio = new File(transferFilePath);
         try (FileInputStream fis = new FileInputStream(audio)) {
             // 预处理
             String taskId = prepare(audio);
             //taskid赋值给taskbean
             taskBean.setTaskId(taskId);
-//            redisTemplate.opsForValue().set(taskBean.getResourceId(),taskBean);
+            redisTemplate.opsForValue().set(taskBean.getResourceId(),taskBean);
             // 分片上传文件
             int len = 0;
             byte[] slice = new byte[SLICE_SICE];

@@ -26,6 +26,8 @@ public interface IKDXFService {
     void exceptionProcess();
 
 
+    void checkTaskStatus(TaskBean taskBean);
+
     /**
      * @param taskBean
      * 开始一个处理转换任务的线程

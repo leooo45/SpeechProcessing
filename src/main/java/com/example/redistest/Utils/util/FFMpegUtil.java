@@ -52,9 +52,9 @@ public class FFMpegUtil {
         BufferedReader br = new BufferedReader(inputStreamReader);
 
         String line = "";
-        while ( (line = br.readLine()) != null ) {
-        System.out.println(line);
-        }
+//        while ( (line = br.readLine()) != null ) {
+//        System.out.println(line);
+//        }
 
         if (br != null) {
             br.close();
@@ -94,15 +94,4 @@ public class FFMpegUtil {
         }
 
     }
-    public static void main(String[] args){
-        FFMpegUtil ffMpegUtil=new FFMpegUtil("/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg");
-        try {
-            ffMpegUtil.extractAudioFromVideo("/Users/shaominchen/Desktop/libei/libei_test.mp4","/Users/shaominchen/Desktop/libei/libei_test.mp3");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        System.out.println("单例测试，结束音频测试");
-
-    }
-
 }
