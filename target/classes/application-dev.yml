@@ -10,12 +10,13 @@ logging:
 server:
     port: 8083
 kdxfConfig:
-    appid: "11223344"
-    secretid: "11223344"
+    appid: "5e4cb2a5"
+    secretid: "fb3e810f1cbfb391594241d6ddfd1c6e"
 ffmpeg:
-    filepath: "D:\ffmpeg-20200309-608b8a8-win64-static\bin\ffmpeg"
+    filepath: "/Users/shaominchen/Documents/software/Util/ffmpeg-20200227-9b22254-macos64-static/bin/ffmpeg"
 queue:
     max_size: 10
 file_piece_size: 10485760
-lfasr_host: http://raasr.xfyun.cn/api
+kdxf_host:
+    url: "http://raasr.xfyun.cn/api"
 

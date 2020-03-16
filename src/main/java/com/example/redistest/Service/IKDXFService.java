@@ -38,5 +38,10 @@ public interface IKDXFService {
      */
     void taskComplete(TaskBean taskBean);
 
-    void addTaskTest(TaskBean taskBean);
+    /**
+     * @param taskBean
+     * 传入单个任务类即可做处理，根据taskid查询任务状态
+     */
+    void checkOneTaskStatus(TaskBean taskBean);
+
 }

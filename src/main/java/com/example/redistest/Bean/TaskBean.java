@@ -19,4 +19,7 @@ public class TaskBean {
 
     //json文件存储的地址
     private String jsonPath = "";
+
+    //实际进行音频转化的文件地址
+    private String transferFilePath;
 }
