@@ -18,7 +18,7 @@ public class SpeechTransferController {
     private IKDXFService kdsfService;
 
     @PostMapping("/startTransfer")
-    public String startTransfer(String filepath,String id,String type){
+    public String startTransfer(String filepath,String id,String type,String jsonpath){
 //        System.out.println("接收到的文件路径sthtynynr");
 //        String message = "E:\\我的.mp4,4028809d70c248520170c25aeedf0000,audio";
 //        String filePath = message.split(",")[0];
@@ -28,6 +28,7 @@ public class SpeechTransferController {
         taskBean.setFilePath(filepath);
         taskBean.setType(type);
         taskBean.setResourceId(id);
+        taskBean.setJsonPath(jsonpath);
         kdsfService.addTask(taskBean);
         return "-----"+filepath+"---------"+id+" "+type;
     }

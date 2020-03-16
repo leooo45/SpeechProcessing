@@ -74,7 +74,7 @@ public class KdxfWebUtil {
                 System.out.println("调试-视频分离过程出错了");
                 // 发送视频音频分离错误MQ 打印错误不再继续
                 e.printStackTrace();
-//                amqpTemplate.convertAndSend(taskBean.getFilePath() + "," + "转换出错");
+                amqpTemplate.convertAndSend(taskBean.getFilePath() + "," + "转换出错");
                 return;
             }
             System.out.println("调试-音频处理结束进入音频切割");
@@ -110,18 +110,18 @@ public class KdxfWebUtil {
             System.out.println("taskid is ---"+taskId);
             } catch (SignatureException e) {
                 e.printStackTrace();
-//            amqpTemplate.convertAndSend(taskBean.getResourceId()+ "," + "转换出错");
+            amqpTemplate.convertAndSend(taskBean.getFilePath()+ "," + "转换出错");
             } catch (FileNotFoundException e1) {
                 //文件不存在 MQ
                 e1.printStackTrace();
-//            amqpTemplate.convertAndSend(filePath + "," + "转换出错");
+            amqpTemplate.convertAndSend(taskBean.getFilePath()+ "," + "转换出错");
             } catch (IOException e2) {
                 //文件读取异常 MQ
                 e2.printStackTrace();
-//            amqpTemplate.convertAndSend(filePath + "," + "转换出错");
+            amqpTemplate.convertAndSend(taskBean.getFilePath()+ "," + "转换出错");
             }catch (Exception e3){
                e3.printStackTrace();
-//            amqpTemplate.convertAndSend(filePath + "," + "转换出错");
+            amqpTemplate.convertAndSend(taskBean.getFilePath()+ "," + "转换出错");
             }
             //转换成功，传送mq给service更新状态
     }

@@ -36,9 +36,8 @@ public interface IKDXFService {
 
     /**
      * @param taskBean
-     * 任务完成时的操作
+     * 单个任务完成时的操作
      */
     void taskComplete(TaskBean taskBean);
 
-    void addTaskTest(TaskBean taskBean);
 }

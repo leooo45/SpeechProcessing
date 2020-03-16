@@ -12,6 +12,7 @@ public class RabbitMQConfig {
 
     public final static String TASK_START_QUEUE = "task.start.queue";
     public final static String STATE_UPDATE_QUEUE = "state.update.queue";
+    public final static String RESULT_QUEUE = "result.queue";
 
     @Bean
     public Queue taskStartQueue(){
@@ -21,6 +22,9 @@ public class RabbitMQConfig {
     public Queue stateUpdateQueue(){
         return new Queue(STATE_UPDATE_QUEUE);
     }
+    @Bean
+    public Queue resultQueue(){ return new Queue(RESULT_QUEUE); }
+
 
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {

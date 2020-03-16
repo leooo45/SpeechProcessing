@@ -2,6 +2,7 @@ package com.example.redistest.Service;
 
 import com.alibaba.fastjson.JSON;
 import com.example.redistest.Bean.TaskBean;
+import com.example.redistest.Config.RabbitMQConfig;
 import com.example.redistest.Utils.dto.ApiResultDto;
 import com.example.redistest.Utils.util.KdxfWebUtil;
 import com.example.redistest.Utils.util.SaveFileUtil;
@@ -30,25 +31,10 @@ public class KDXFServiceImpl implements IKDXFService {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    @Override
-    public void addTaskTest(TaskBean taskBean){
-//        Queue waitingQueue = (ArrayBlockingQueue)redisTemplate.opsForValue().get("waitingQueue");
-//        waitingQueue.add(taskBean);
-//       redisTemplate.opsForValue().set("waitingQueue",waitingQueue);
-//        Set<String> keys = redisTemplate.keys("*");
-//        for(String key:keys){
-//            //key为Redis中得到的所有的任务的资源id
-//            if(key.equals("waitingQueue")){
-//                System.out.println("0000");
-//            }
-//        }
-
-
-    }
-
 
     @Override
     public void addTask(TaskBean taskBean) {
+        amqpTemplate.convertAndSend(taskBean.getFilePath() + "," + "转换中");
         Queue waitingQueue = (ArrayBlockingQueue) redisTemplate.opsForValue().get("waitingQueue");
         //加入任务队列
         //如果运行队列（也就是redis中除了等待队列，其他所有的对象）满了就加入等待队列
@@ -68,6 +54,8 @@ public class KDXFServiceImpl implements IKDXFService {
             startOneTask(taskBean);
         }
     }
+
+
 
     //获取转换结果，10秒一次查询转换
     public void checkStatus() {
@@ -101,19 +89,14 @@ public class KDXFServiceImpl implements IKDXFService {
                     System.out.println("\r\n\r\n转写结果: " +kdxfWebUtil.getResult(taskid));
                     try{
                         //写入文件
-                        String jsonSavePath="D:\\www.json";
+                        String jsonSavePath=taskBean.getJsonPath();
                         SaveFileUtil.saveDataToFile(jsonSavePath,kdxfWebUtil.getResult(taskid));
                     }catch (Exception e){
                         e.printStackTrace();
-//                    amqpTemplate.convertAndSend(mFilePath + "," + "转换出错");
+                    amqpTemplate.convertAndSend(taskBean.getFilePath() + "," + "转换出错");
                         return;
                     }
-//                amqpTemplate.convertAndSend(mFilePath + "," + "转换成功");
-                             /*若有任务完成
-                             则给文科平台API发消息（文件转换状态更新）
-                             队列（task-processing）删掉已完成任务
-                             队列（task-standby） 拿新的任务*/
-//                            taskComplete();
+                    taskComplete(taskBean);
                     System.out.println("调试-任务处理成功");
                     return;
                 }
@@ -141,10 +124,11 @@ public class KDXFServiceImpl implements IKDXFService {
 
     @Override
     public void startOneTask(TaskBean taskBean) {
-//        redisTemplate.opsForValue().set(taskBean.getResourceId(),taskBean);
         KdxfWebUtil kdxfWebUtil = new KdxfWebUtil(amqpTemplate,redisTemplate);
         kdxfWebUtil.startTask(taskBean);
     }
+
+
 
     @Override
     public void taskComplete(TaskBean taskBean) {
@@ -152,7 +136,16 @@ public class KDXFServiceImpl implements IKDXFService {
          则给文科平台API发消息（文件转换状态更新）
          队列（task-processing）删掉已完成任务
          队列（task-standby） 拿新的任务*/
-//        amqpTemplate.convertAndSend(taskBean.getFilePath() +  "," + taskBean.getJsonPath());
+        amqpTemplate.convertAndSend(RabbitMQConfig.STATE_UPDATE_QUEUE,taskBean.getFilePath() +  "," + "转换完成");
+        amqpTemplate.convertAndSend(RabbitMQConfig.RESULT_QUEUE,taskBean.getFilePath() +  "," + taskBean.getJsonPath());
         redisTemplate.delete(taskBean.getResourceId());
+        Queue waitingQueue = (ArrayBlockingQueue) redisTemplate.opsForValue().get("waitingQueue");
+        //加入任务队列
+        //如果运行队列（也就是redis中除了等待队列，其他所有的对象）满了就加入等待队列
+            if (waitingQueue.size() != 0) {
+                TaskBean taskBean1 = (TaskBean) waitingQueue.poll();
+                startOneTask(taskBean1);
+                redisTemplate.opsForValue().set(waitingQueue, waitingQueue);
+            }
     }
 }
