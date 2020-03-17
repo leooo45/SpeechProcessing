@@ -68,6 +68,7 @@ public class KdxfWebUtil {
             }else {
             taskBean.setTransferFilePath(taskBean.getFilePath());
             }
+
         File audio = new File(taskBean.getTransferFilePath());
         try (FileInputStream fis = new FileInputStream(audio)) {
             // 预处理
