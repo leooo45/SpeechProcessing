@@ -1,0 +1,6 @@
+spring:
+    thymeleaf:
+        mode: HTML
+        prefix: /templates/
+    profiles:
+        active: uat
