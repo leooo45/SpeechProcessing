@@ -115,7 +115,6 @@ public class KdxfWebUtil {
             }
             //转换成功，传送mq给service更新状态或者是直接添加到redis
     }
-
     /**
      * 用于视频抽取音频
      * @param taskBean

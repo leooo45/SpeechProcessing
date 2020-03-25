@@ -38,7 +38,7 @@ public class KDXFServiceImpl implements IKDXFService {
     @Override
     public void addTask(TaskBean taskBean) {
         System.out.println("加入一个任务");
-        amqpTemplate.convertAndSend(RabbitMQConfig.STATE_UPDATE_QUEUE,taskBean.getFilePath() + "," + "转换中");
+//        amqpTemplate.convertAndSend(RabbitMQConfig.STATE_UPDATE_QUEUE,taskBean.getFilePath() + "," + "转换中");
         Queue<TaskBean> waitingQueue;
         try {
             //有可能得到的waitingqueue为空
