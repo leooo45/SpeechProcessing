@@ -7,7 +7,6 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import java.io.File;
@@ -44,6 +43,7 @@ public class KdxfWebUtil {
     public static final String GET_PROGRESS = "/getProgress";
     public KdxfWebUtil() {
     }
+
     /**
      * 处理单个任务,完成文件的视频音频分离、切片上传、重组一系列操作
      * @param taskBean
@@ -57,7 +57,6 @@ public class KdxfWebUtil {
             System.out.println("调试-当前处理的信息不完整，发送mq，程序返回不再执行"+taskBean.toString());
             return;
         }
-
         if (!taskBean.getType().equals("视频") && !taskBean.getType().equals("音频")){
         //判断文件类型参数是否有问题
 

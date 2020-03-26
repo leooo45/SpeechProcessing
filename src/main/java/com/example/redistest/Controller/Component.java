@@ -21,8 +21,7 @@ public class Component {
 
     @Scheduled(cron = "0/10 * * * * *")
     public void checkStatus() {
-
-        //遍历正在转化的队列的taskId获取最新状态
+     //遍历正在转化的队列的taskId获取最新状态
         Set<String> keys = redisTemplate.keys("*");
         System.out.println("定时任务中的keys: ");
         keys.forEach(e ->{

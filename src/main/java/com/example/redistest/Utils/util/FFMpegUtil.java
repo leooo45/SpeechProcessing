@@ -15,7 +15,6 @@ public class FFMpegUtil {
         super();
         this.ffmpegEXE = ffmpegEXE;
     }
-
     /**
      * 视频抽取音频转mp3
      * eg:ffmpeg -i apple.mp4 -f mp3 -vn apple.mp3

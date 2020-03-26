@@ -6,15 +6,11 @@ import com.example.redistest.Bean.ApiResultDto;
 import com.example.redistest.Config.RabbitMQConfig;
 import com.example.redistest.Utils.util.KdxfWebUtil;
 import com.example.redistest.Utils.util.SaveFileUtil;
-import javafx.concurrent.Task;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
-import java.io.File;
 import java.security.SignatureException;
 import java.util.Queue;
 import java.util.Set;
